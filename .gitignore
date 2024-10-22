@@ -1,0 +1,5 @@
+.terraform
+*.zip
+**/.layer
+*.tfstate
+*.tfstate.*
