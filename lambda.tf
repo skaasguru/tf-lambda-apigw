@@ -20,7 +20,7 @@ data "archive_file" "lambda_layer" {
 }
 
 resource "aws_lambda_layer_version" "lambda_layer" {
-  layer_name          = "app-dependencies"
+  layer_name          = "${var.prefix}-app-dependencies"
   filename            = data.archive_file.lambda_layer.output_path
   source_code_hash    = data.archive_file.lambda_layer.output_base64sha256
   compatible_runtimes = ["python3.12"]
